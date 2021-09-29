@@ -5,26 +5,34 @@
  */
 package sktvp20task2gratsjovaleksandr;
 import java.util.Scanner;
+import java.util.*;
+
 /**
  *
  * @author user
- */
-public class SKTVp20Task2GratsjovAleksandr {
+ 
+public class sktvp20task2gratsjovaleksandr {
 
-	public static void main(String[] args) {
-		int a,b,c,d;
-		System.out.println("Dlya vipolneniya programmi nyjno vvesti 3 celih chisla");
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Vvedite pervoe chislo: ");
-		if(sc.hasNextInt()) {
-			a = sc.nextInt();
-			System.out.print("Vvedite vtoroye chislo: ");
-                        if(sc.hasNextInt()) {
-				b = sc.nextInt();
-                        System.out.print("Vvedite tretje chislo: ");
-			if(sc.hasNextInt()) {
-                                c = sc.nextInt();
-				d = a+b+c;
-				System.out.print("Summa etih chisel = "+d);
-			} 
-
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the three digit integer number: ");
+        int num = sc.nextInt();
+        
+        if (num>99 && num<1000) {
+        int ones = (num % 10);
+        int tens = ((Math.floorDiv(num, 10)) % 10);
+        int hundreds = (Math.floorDiv(num, 100));
+        int sum = ones + tens + hundreds;
+        System.out.print("The ones: " + ones + "\n");
+        System.out.print("The tens: " + tens + "\n");
+        System.out.print("The digit sum: " + sum + "\n");
+        } 
+        else {
+            System.out.print("The number is not the three digit number. \n");
+        }
+    
+}
+}
